@@ -1,0 +1,21 @@
+# use Ganache's forked mainnet mode as the default network
+networks:
+  default: mainnet-fork
+ 
+
+autofetch_sources: true
+
+# require OpenZepplin Contracts
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts-upgradeable@3.4.0
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+  - Badger-Finance/badger-sett-1.5@0.1
+
+# path remapping to support OpenZepplin imports with NPM-style path
+compiler:
+  solc:
+    version: 0.6.12
+    remappings:
+      - "@openzeppelin-contracts-upgradeable=OpenZeppelin/openzeppelin-contracts-upgradeable@3.4.0/contracts/"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0"
+      - "@badger-finance=Badger-Finance/badger-sett-1.5@0.1/contracts/"
